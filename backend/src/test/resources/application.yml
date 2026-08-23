@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: vetmonk-backend-test
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    open-in-view: false
+
+app:
+  jwt:
+    secret: VetMonkTestSecretKeyForUnitAndIntegrationTestingMustBe64BytesLongOrMore!
+    expiration-ms: 3600000
+  storage:
+    upload-dir: ./target/test-uploads
+  ai:
+    api-key: ""
+  seed-demo-data: true
