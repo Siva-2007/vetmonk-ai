@@ -15,6 +15,7 @@ import { LandingPage } from '../pages/LandingPage';
 import { LoginPage } from '../pages/LoginPage';
 import { PetOwnerLoginPage } from '../pages/PetOwnerLoginPage';
 import { HospitalLoginPage } from '../pages/HospitalLoginPage';
+import { SuperAdminLoginPage } from '../pages/SuperAdminLoginPage';
 import { RegisterPage } from '../pages/RegisterPage';
 import { PublicVacanciesPage } from '../pages/PublicVacanciesPage';
 import { ApplyVacancyPage } from '../pages/ApplyVacancyPage';
@@ -85,46 +86,52 @@ export const AppRoutes = () => {
           element={<LandingPage />}
         />
 
-
         <Route
           path="/login"
           element={<LoginPage />}
         />
-
 
         <Route
           path="/login/pet-owner"
           element={<PetOwnerLoginPage />}
         />
 
-
         <Route
           path="/login/hospital"
           element={<HospitalLoginPage />}
         />
 
+        {/* =================================================
+            SUPER ADMIN LOGIN
+        ================================================= */}
+
+        <Route
+          path="/login/super-admin"
+          element={<SuperAdminLoginPage />}
+        />
 
         <Route
           path="/register"
           element={<RegisterPage />}
         />
 
-
-        {/* PUBLIC CAREERS */}
+        {/* =================================================
+            PUBLIC CAREERS
+        ================================================= */}
 
         <Route
           path="/vacancies"
           element={<PublicVacanciesPage />}
         />
 
-
-        {/* APPLY FOR VACANCY */}
+        {/* =================================================
+            APPLY FOR VACANCY
+        ================================================= */}
 
         <Route
           path="/vacancies/:id/apply"
           element={<ApplyVacancyPage />}
         />
-
 
         <Route
           path="/unauthorized"
@@ -139,7 +146,6 @@ export const AppRoutes = () => {
       ===================================================== */}
 
       <Route element={<DashboardLayout />}>
-
 
         {/* ===================================================
             UNIVERSAL AUTHENTICATED PAGES
@@ -361,24 +367,20 @@ export const AppRoutes = () => {
             element={<SuperAdminDashboard />}
           />
 
-
           <Route
             path="/super-admin/clinics"
             element={<SuperAdminClinicsPage />}
           />
-
 
           <Route
             path="/super-admin/users"
             element={<SuperAdminUsersPage />}
           />
 
-
           <Route
             path="/super-admin/vacancies"
             element={<SuperAdminVacanciesPage />}
           />
-
 
           <Route
             path="/super-admin/audit"

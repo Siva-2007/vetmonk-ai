@@ -5,7 +5,8 @@ import {
   PawPrint,
   Building2,
   ArrowRight,
-  Shield
+  Shield,
+  ShieldCheck
 } from 'lucide-react';
 
 export const LoginPage = () => {
@@ -17,7 +18,7 @@ export const LoginPage = () => {
   return (
     <div className="min-h-[85vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-2xl w-full">
+      <div className="max-w-4xl w-full">
 
         {/* =====================================================
             HEADER
@@ -52,7 +53,7 @@ export const LoginPage = () => {
         {/* =====================================================
             LOGIN OPTIONS
         ===================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
 
 
           {/* ===================================================
@@ -124,6 +125,41 @@ export const LoginPage = () => {
 
           </button>
 
+
+          {/* ===================================================
+              SUPER ADMIN LOGIN
+          =================================================== */}
+          <button
+            type="button"
+            onClick={() => navigate('/login/super-admin')}
+            className="group text-left bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-7 shadow-sm hover:shadow-xl hover:border-violet-300 transition-all duration-200"
+          >
+
+            <div className="flex items-start justify-between">
+
+              <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center group-hover:bg-violet-100 transition">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+
+              <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-violet-600 group-hover:translate-x-1 transition" />
+
+            </div>
+
+            <h2 className="text-lg font-extrabold text-slate-900 mt-5">
+              Super Admin
+            </h2>
+
+            <p className="text-sm text-slate-500 mt-2 leading-relaxed">
+              Manage clinics, users, vacancies, audit logs and
+              platform-wide administration.
+            </p>
+
+            <div className="mt-5 text-xs font-bold text-violet-600">
+              Admin Login →
+            </div>
+
+          </button>
+
         </div>
 
 
@@ -146,7 +182,8 @@ export const LoginPage = () => {
               <p className="text-[11px] text-slate-500 mt-1 leading-relaxed">
                 Hospital accounts are provisioned by authorized administrators.
                 Pet owners can create their own accounts through the owner
-                registration process.
+                registration process. Super Admin access is restricted to
+                authorized platform administrators.
               </p>
             </div>
 
